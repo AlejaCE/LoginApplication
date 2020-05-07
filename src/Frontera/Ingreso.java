@@ -5,6 +5,9 @@
  */
 package Frontera;
 
+import Control.ValidarLogin;
+import Entidad.Usuario;
+
 /**
  *
  * @author Alejandra Cadena
@@ -92,7 +95,13 @@ public class Ingreso extends javax.swing.JPanel {
     }//GEN-LAST:event_nombreTFActionPerformed
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        // TODO add your handling code here:
+        Usuario usuario = new Usuario();
+        usuario.setNombre(nombreTF.getText());
+        usuario.setPassword(contraseniaTF.getText());
+        ValidarLogin validar = new ValidarLogin();
+        System.out.println("----------");
+        String resultado =validar.verificarLogin(usuario);
+        System.out.println(resultado);
     }//GEN-LAST:event_aceptarBActionPerformed
 
 
